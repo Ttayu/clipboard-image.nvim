@@ -5,7 +5,7 @@ local check_dependency = require("clipboard-image.health").check_current_dep
 local cmd_check, cmd_paste = utils.get_clip_command()
 
 local paste_img_to = function(path)
-  os.execute(string.format(cmd_paste, path))
+  io.popen(string.format(cmd_paste, path))
 end
 
 M.paste_img = function(opts)
